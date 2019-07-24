@@ -12,7 +12,7 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        //runBasics();
+        // runBasics();
         
         Employee* Bob = [[Employee alloc] init];
         [Bob setName: @"Bob"];
@@ -45,6 +45,20 @@ int main(int argc, const char * argv[]) {
               (unsigned long)[items count],
               [items[0] name], [[items objectAtIndex: 1] name], [items[2] name], [items[3] name], items[4]
         );
+        
+        NSMutableDictionary* usStates = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+            @"Arizona",    @"AZ",
+            @"California", @"CA",
+            @"Colorado",   @"CO",
+            @"Hawaii",     @"HI",
+            nil
+        ];
+
+        [usStates setObject:@"Florida" forKey:@"FL"];
+        
+        NSLog(@"dictionary: %@", usStates);
+        NSString* key = @"HI";
+        NSLog(@"%@ is for %@", key, [usStates objectForKey: key]);
     }
     return 0;
 }
