@@ -63,6 +63,29 @@ int main(int argc, const char * argv[]) {
         for (NSString* key in usStates) {
             NSLog(@"%@ - %@", key, [usStates objectForKey: key]);
         }
+        
+        NSFileManager* fileMgr = [[NSFileManager alloc] init];
+        NSString* contents = @"Lalalalalala";
+        
+        NSString* filepath = [[NSArray arrayWithObjects:
+            [[fileMgr URLForDirectory:NSDocumentDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:NO error:nil] absoluteString],
+            @"sample.txt",
+            nil
+        ] componentsJoinedByString:@""];
+        
+        NSError* error;
+        if([fileMgr
+            createFileAtPath:filepath
+            contents:[contents dataUsingEncoding:NSUTF8StringEncoding]
+            attributes:nil
+        ]) {
+            NSLog(@"Create Success");
+        } else{
+            NSLog(@"Create error: %@", error);
+        }
+        
+        NSLog(@"%@", filepath);
+        
     }
     return 0;
 }
