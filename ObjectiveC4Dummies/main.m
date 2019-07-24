@@ -59,6 +59,10 @@ int main(int argc, const char * argv[]) {
         NSLog(@"dictionary: %@", usStates);
         NSString* key = @"HI";
         NSLog(@"%@ is for %@", key, [usStates objectForKey: key]);
+        
+        for (NSString* key in usStates) {
+            NSLog(@"%@ - %@", key, [usStates objectForKey: key]);
+        }
     }
     return 0;
 }
