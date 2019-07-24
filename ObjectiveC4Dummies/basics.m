@@ -1,5 +1,4 @@
 //
-//  basics.m
 //  ObjectiveC4Dummies
 //
 //  Created by Carlos on 7/22/19.
@@ -45,7 +44,7 @@
  *      NSLog(@"String value is: %@", value);
  */
 
-void run() {
+void runBasics() {
     int months = 12;
     int weeks = (4 * months) + 4;
     int days = 7 * weeks + 1;

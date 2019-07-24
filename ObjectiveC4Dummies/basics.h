@@ -8,7 +8,7 @@
 
 #ifndef basics_h
 
-void run(void);
+void runBasics(void);
 
 #define basics_h
 
