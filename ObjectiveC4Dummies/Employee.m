@@ -5,13 +5,52 @@
 //  Copyright © 2019 Carlos. All rights reserved.
 //
 
-#import "Employee.h"
 #import <Foundation/Foundation.h>
+#import "Employee.h"
 
 @implementation Employee
-    @synthesize name, hiredate, employeeNumber;
+    @synthesize name, hireDate, employeeNumber;
+//    {
+//        NSString* name;
+//        NSDate* hireDate;
+//        int employeeNumber;
+//    }
+//
+//    -(void) setName: (NSString*) value {
+//        name = value;
+//    }
+//
+//    -(void) setHireDate: (NSDate*) value {
+//        hireDate = value;
+//    }
+//
+//    -(void) setEmployeeNumber: (int) value {
+//        employeeNumber = value;
+//    }
 
-    -(void) greet {
-        NSLog(@"Hello!");
+    +(int) add: (int) a to:(int) b {
+        return a + b;
+    }
+
+    +(int) subtract: (int) a from:(int) b {
+        return b - a;
+    }
+
+    -(id) init{
+        return [self initWith: @"" date: nil number: -1];
+    }
+
+    -(id) initWith: (NSString*) nam date: (NSDate*) d number: (int) num {
+        self = [super init];
+        if (self) {
+            name = nam;
+            hireDate = d;
+            employeeNumber = num;
+        }
+        return self;
+    }
+
+    -(NSString *) greet: (NSString *) name {
+        return @"Hello!";
     }
 @end

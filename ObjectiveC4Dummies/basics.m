@@ -52,6 +52,16 @@ void runBasics() {
     int minutes = 60 * hours;
     int seconds = 60 * minutes;
     
+    // arrays have a fixed size.
+    // types can't be mixed in arrays.
+    // Objective-C doesn't implement bound checks i.e. arr[999...]
+    
+    int parkingSpots[] = { 40, 32, 21 };
+    NSLog(@"There are %i parking spots on the third floor!", parkingSpots[2]);
+    
+    NSString* stringArray[2] = { @"Hello", @"World" };
+    NSLog(@"%@ %@", stringArray[0], stringArray[1]);
+    
     float circleArea = PI * 24;
     NSLog(@"Circle Area: %f", circleArea);
     
