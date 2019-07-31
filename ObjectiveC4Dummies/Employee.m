@@ -28,14 +28,6 @@
 //        employeeNumber = value;
 //    }
 
-    +(int) add: (int) a to:(int) b {
-        return a + b;
-    }
-
-    +(int) subtract: (int) a from:(int) b {
-        return b - a;
-    }
-
     -(id) init{
         return [self initWith: @"" date: nil number: -1];
     }
@@ -48,9 +40,5 @@
             employeeNumber = num;
         }
         return self;
-    }
-
-    -(NSString *) greet: (NSString *) name {
-        return @"Hello!";
     }
 @end
